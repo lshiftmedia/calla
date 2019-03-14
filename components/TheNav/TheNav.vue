@@ -21,13 +21,16 @@
       </ul>
       <ul class="site-navigation--secondary-links">
         <li class="site-navigation--link-container email">
-            <a class="link--underline" href="mailto:naomi@callalegal.ca">naomi@callalegal.ca</a>
+          <i class="material-icons">email</i>
+          <a class="link--underline" href="mailto:naomi@callalegal.ca">naomi@callalegal.ca</a>
         </li>  
         <li class="site-navigation--link-container phone">
-            <a class="link--underline" href="tel:416-804-6303">416-804-6303</a>
+          <i class="material-icons">phone</i>
+          <a class="link--underline" href="tel:416-804-6303">416-804-6303</a>
         </li>
         <li class="site-navigation--link-container map">
-            <a class="link--underline" target="_blank" href="https://www.google.com/maps/place/140+Yonge+St+%23200,+Toronto,+ON+M2R+3V1/@43.6510756,-79.3814433,17z/data=!3m1!4b1!4m5!3m4!1s0x89d4cb32e09c6e47:0x585e13ed519b167e!8m2!3d43.6510756!4d-79.3792546">
+          <i class="material-icons">place</i>
+          <a class="link--underline" target="_blank" href="https://www.google.com/maps/place/140+Yonge+St+%23200,+Toronto,+ON+M2R+3V1/@43.6510756,-79.3814433,17z/data=!3m1!4b1!4m5!3m4!1s0x89d4cb32e09c6e47:0x585e13ed519b167e!8m2!3d43.6510756!4d-79.3792546">
             140 Yonge Street, Suite 200</a>
         </li>			
 			</ul>
