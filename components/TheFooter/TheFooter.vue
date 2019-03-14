@@ -5,7 +5,7 @@
         <div class="site-details">
           <ul class="site-legal">
             <li class="copyright">
-              ©2019 Calla Legal All rights reserved
+              ©{{ new Date().getFullYear() }} Calla Legal All rights reserved
             </li>
           </ul>
         </div>

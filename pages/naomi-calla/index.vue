@@ -74,7 +74,7 @@ export default {
       // version: version
       version: 'draft'
     }).then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       return {
         blok: res.data.story.content,
         hero: res.data.story.content.hero[0],
