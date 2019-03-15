@@ -375,24 +375,25 @@ img {
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
-  animation-play-state: running
+  animation-play-state: running;
 }
 
 .link--underline:hover,
 .link--underline:focus {
   transition: color 0.05s cubic-bezier(0.32, 0.01, 0, 1) 0.05s;
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
-
-.link--underline:hover:before,
-.link--underline:focus:before {
-  animation-name: underline_in;
-  animation-duration: 0.3s;
-  animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-play-state: running
+@media (pointer: fine) {
+  .link--underline:hover:before,
+  .link--underline:focus:before {
+    animation-name: underline_in;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
 }
 
 @media screen and (orientation: portrait) {
