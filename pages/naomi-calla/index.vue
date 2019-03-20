@@ -2,8 +2,8 @@
 
 <article class="news-item">
   <div class="module hero-story light-all has-image " data-visible="true" data-has-animated="true" data-position="in-viewport">
-    <div v-if="hero.image" class="module-background" 
-      :style="{ backgroundImage: 'url(' + hero.image + ')' }">
+    <div v-if="hero.heroImage" class="module-background" 
+      :style="{ backgroundImage: 'url(' + hero.heroImage + ')' }">
     </div>
     <div v-else class="module-background" 
       :style="{ backgroundColor: '#' + hero.heroBgColor }">
@@ -40,7 +40,7 @@
                 </div>
               </template>
               <template v-else>
-              <h3 v-if="bodies.header" :key="bodies.header[i]">{{bodies.header}}</h3>
+              <h3 v-if="bodies.header" :key="i">{{bodies.header}}</h3>
               <p v-if="bodies.copy" :key="bodies.copy[i]">{{bodies.copy}}</p>
               </template>
             </template>
@@ -51,11 +51,13 @@
                 </li>
               </ul>
             </template>
-            <p>To access Naomi's LinkedIn profile, 
-              <a href="https://ca.linkedin.com/in/naomi-calla-3a4aaa67" target="_blank" class="copyLink link--underline">
-                click here.
-              </a>
-            </p>
+            <template v-for="(plinks, i) in plink">
+              <p :key="plinks[i]">{{plinks.p_text}} 
+                <nuxt-link :to="{ path: plinks.link_href }" class="copyLink link--underline">
+                  {{plinks.link_copy}}
+                </nuxt-link>
+              </p>
+            </template>
           </div>
         </div>
       </div>
@@ -74,17 +76,28 @@ export default {
       // version: version
       version: 'draft'
     }).then(res => {
-      // console.log(res.data)
+      console.log(res.data)
       return {
         blok: res.data.story.content,
         hero: res.data.story.content.hero[0],
         header: res.data.story.content.header,
         body: res.data.story.content.body,
-        list_group: res.data.story.content.lists
+        list_group: res.data.story.content.lists,
+        title: res.data.story.content.pageTitle,
+        description: res.data.story.content.pageDescription,
+        plink: res.data.story.content.paraLink
       }
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: this.description }
+      ]
+    }
   }
 }
 

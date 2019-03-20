@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Calla Law',
+    title: 'Calla Legal',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'A boutique law firm specializing in workplace investigations.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },

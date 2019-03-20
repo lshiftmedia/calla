@@ -7,6 +7,14 @@
             <li class="copyright">
               ©{{ new Date().getFullYear() }} Calla Legal All rights reserved
             </li>
+
+            <li class="legal-link">
+              <a class="link muted" href="mailto:naomi@callalegal.ca">naomi@callalegal.ca</a>
+            </li>
+            <li class="legal-link">
+              <a class="link muted" href="tel:416-804-6303">416-804-6303</a>
+            </li>
+
           </ul>
         </div>
     </div>

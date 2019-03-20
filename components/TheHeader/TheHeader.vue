@@ -1,7 +1,7 @@
 <template>
    <header class="masthead mini white" role="banner" :class="{'isOpen' : toggleNav}">
     <div class="masthead-left">
-      <nuxt-link to="/">
+      <nuxt-link to="/"  @click="$store.dispatch('nav/toggleNav')">
         <h1 class="logo">
           <span class="logo-text">Calla Legal</span>
           <img src="../../assets/calla_logo.png" alt="Calla Logo" title="Calla Logo">

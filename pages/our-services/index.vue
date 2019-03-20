@@ -1,8 +1,8 @@
 <template>
   <article class="news-item">
   <div class="module hero-story light-all has-image " data-visible="true" data-has-animated="true" data-position="in-viewport">
-    <div v-if="hero.image" class="module-background" 
-      :style="{ backgroundImage: 'url(' + hero.image + ')' }">
+    <div v-if="hero.heroImage" class="module-background" 
+      :style="{ backgroundImage: 'url(' + hero.heroImage + ')' }">
     </div>
     <div v-else class="module-background" 
       :style="{ backgroundColor: '#' + hero.heroBgColor }">
@@ -20,7 +20,7 @@
         <div class="module-content">
           <div class="article-content" v-editable="blok">
             <template v-for="(bodies, i) in body">
-              <h3 v-if="bodies.header" :key="bodies.header[i]">{{bodies.header}}</h3>
+              <h3 v-if="bodies.header" :key="i">{{bodies.header}}</h3>
               <p v-if="bodies.copy" :key="bodies.copy[i]">{{bodies.copy}}</p>
             </template>
           </div>
@@ -45,11 +45,21 @@ export default {
         blok: res.data.story.content,
         hero: res.data.story.content.hero[0],
         header: res.data.story.content.header,
-        body: res.data.story.content.body
+        body: res.data.story.content.body,
+        title: res.data.story.content.pageTitle,
+        description: res.data.story.content.pageDescription
       }
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: this.description }
+      ]
+    }
   },
   // data: {
   //   bodyArr: null
